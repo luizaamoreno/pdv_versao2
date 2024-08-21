@@ -595,13 +595,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adicionar evento de logout ao botão
     const logoutButton = document.getElementById('logout-button');
     if (logoutButton) {
-        logoutButton.addEventListener('click', logout);
+        logoutButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão do link
+            logout();
+        });
+    } else {
+        console.error('Botão de logout não encontrado');
     }
 });
 
 // Função de logout
 function logout() {
     localStorage.removeItem('loggedIn');
+    localStorage.removeItem('userType');
     window.location.href = 'index.html';
 }
 
