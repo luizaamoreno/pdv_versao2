@@ -14,7 +14,7 @@ function login(event) {
 
     // Simular uma verificação de credenciais
     let userType;
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'admin' && password === 'senha123') {
         userType = 'admin';
     } else if (username === 'user' && password === 'user123') {
         userType = 'common';
