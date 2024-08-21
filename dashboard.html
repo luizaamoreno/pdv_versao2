@@ -9,15 +9,18 @@
 <body>
     <div class="container">
         <header>
-            <h1>Sistema de PDV</h1>
+            <div class="header-titles">
+                <h1>Sistema de PDV</h1>
+                <h3>Dashboard</h3>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="inventory.html">Gerenciar Estoque</a></li>
                     <li><a href="order.html">Pedidos</a></li>
+                    <li class="admin-only"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="admin-only"><a href="inventory.html">Gestão de Estoque</a></li>
+                    <li><a href="#" id="logout-button">Sair</a></li>
                 </ul>
             </nav>
-            <button id="logout-button">Sair</button>
         </header>
 
         <main role="main">
@@ -28,6 +31,23 @@
                 <div id="sales-comparison"></div>
                 <div class="chart-container">
                     <canvas id="sales-chart"></canvas>
+                </div>
+            </section>
+
+            <section>
+                <div id= "report-section" class="section dashboard-section">
+                    <h2>Relatório de Vendas</h2>
+                    <div class="date-range-picker">
+                        <div class="form-group">
+                            <label for="start-date">Data de Início:</label>
+                            <input type="date" id="start-date" name="start-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">Data de Fim:</label>
+                            <input type="date" id="end-date" name="end-date">
+                        </div>
+                    </div>
+                    <button id="generate-report" class="btn btn-primary">Gerar Relatório Excel</button>
                 </div>
             </section>
     
@@ -72,6 +92,7 @@
             </section>
         </main>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./js/dashboard.js"></script>

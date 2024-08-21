@@ -9,16 +9,19 @@
 <body>
     <div class="container">
         <header>
-            <h1>Criar Pedido - Sistema de PDV</h1>
+            <div class="header-titles">
+                <h1>Sistema de PDV</h1>
+                <h3>Pedidos</h3>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="inventory.html">Gerenciar Estoque</a></li>
-                    <li><a href="#" class="active">Pedidos</a></li>
+                    <li><a href="order.html">Pedidos</a></li>
+                    <li class="admin-only"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="admin-only"><a href="inventory.html">Gestão de Estoque</a></li>
+                    <li><a href="#" id="logout-button">Sair</a></li>
                 </ul>
             </nav>
             <div id="cart-icon">🛒 <span id="cart-badge">0</span></div>
-            <button id="logout-button">Sair</button>
         </header>
 
         <main>
@@ -185,13 +188,22 @@
             </div>
         </div>
 
+
+
+    
+    <script>
+        // Esconder elementos admin-only para usuários comuns
+        if (localStorage.getItem('userType') !== 'admin') {
+                document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'none');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script type="module" src="./js/main.js"></script>
-    <script src="./js/orderPage.js"></script>
-    <script src="./js/cart.js"></script>
-    <script src="./js/modals.js"></script>
-    <script src="./js/utils.js"></script>
-    <script src="./js/products.js"></script>
-    <script src="./js/orders.js"></script>
+    <script type="module" src="./js/utils.js"></script>
+    <script type="module" src="./js/products.js"></script>
+    <script type="module" src="./js/cart.js"></script>
+    <script type="module" src="./js/orders.js"></script>
+    <script type="module" src="./js/modals.js"></script>
+    <script type="module" src="./js/main.js"></script>   
 </body>
 </html>

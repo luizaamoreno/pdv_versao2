@@ -10,17 +10,45 @@
 <body>
     <div class="container">
         <header>
-            <h1>Gerenciamento de Estoque - Sistema de PDV</h1>
+            <div class="header-titles">
+                <h1>Sistema de PDV</h1>
+                <h3>Gestão de Estoques</h3>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="order.html">Pedidos</a></li>
-                    <li><button id="logout-button">Sair</button></li>
+                    <li class="admin-only"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="admin-only"><a href="inventory.html">Gestão de Estoque</a></li>
+                    <li><a href="#" id="logout-button">Sair</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
+            <div class="product-form-div">
+                <h3>Cadastro de produtos</h3>
+                <form id="product-form" class="product-form-grid">
+                    <div class="forms-div">
+                        <input type="text" id="product-name" placeholder="Nome do Produto" required>
+                        <input type="number" id="product-price" placeholder="Preço" step="0.01" required>
+                        <input type="number" id="product-quantity" placeholder="Quantidade" required>
+                        <select id="product-unit" required>
+                        <option value="un">Unidade</option>
+                        <option value="kg">Kg</option>
+                        </select>
+                        <input type="text" id="product-category" placeholder="Categoria" required>
+                    </div>
+            
+                <div class="add-product-out">
+                    <div class="add-product-in">
+                    <input type="file" id="product-image" accept="image/*"><i class="fas fa-plus"></i><p>Clique para escolher a imagem</p>
+                    </div>
+                    <button class="add-product" id="add-product-button"></i> Adicionar Produto</button>
+                </div>
+                </form>
+
+            </div>
+
             <div class="search-filter">
                 <input type="text" id="search-product" placeholder="Pesquisar produtos...">
                 <select id="category-filter">
@@ -28,19 +56,6 @@
                     <!-- As opções de categoria serão preenchidas dinamicamente via JavaScript -->
                 </select>
             </div>
-
-            <form id="product-form" class="product-form-grid">
-                <input type="text" id="product-name" placeholder="Nome do Produto" required>
-                <input type="number" id="product-price" placeholder="Preço" step="0.01" required>
-                <input type="number" id="product-quantity" placeholder="Quantidade" required>
-                <select id="product-unit" required>
-                    <option value="un">Unidade</option>
-                    <option value="kg">Kg</option>
-                </select>
-                <input type="text" id="product-category" placeholder="Categoria" required>
-                <input type="file" id="product-image" accept="image/*">
-                <button type="submit"><i class="fas fa-plus"></i> Adicionar Produto</button>
-            </form>
 
             <div id="product-grid"></div>
 
