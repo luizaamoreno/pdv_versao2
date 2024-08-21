@@ -1,0 +1,249 @@
+/* Dashboard específico CSS */
+.dashboard-section {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-card h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.dashboard-card p {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.date-range-picker {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.product-list, .customer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li, .customer-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.product-list li:last-child, .customer-list li:last-child {
+    border-bottom: none;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.progress-bar-fill {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    height: 100%;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.alert, .suggestion {
+    list-style-type: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+}
+
+.alert-list, .suggestion-list {
+    padding: 0;
+}
+
+.alert-item, .suggestion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #f5c6cb;
+}
+
+.suggestion {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 5px solid #c3e6cb;
+}
+
+.suggestion-item span {
+    margin-right: 10px;
+}
+
+.stock-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stock-label {
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+.payment-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.payment-info .chart-container {
+    width: 50%;
+    height: 300px;
+}
+
+#average-purchase-table {
+    width: 60%;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payment-table th, .payment-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.payment-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.payment-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.payment-table th {
+    background-color: #f2f2f2;
+}
+
+.current-date {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.comparisons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.comparison-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.comparison-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.comparison-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comparison-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.comparison-list li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+
+    .payment-info {
+        flex-direction: column;
+    }
+    
+    .chart-container, #average-purchase-table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .comparisons-grid {
+        grid-template-columns: 1fr;
+    }
+}
